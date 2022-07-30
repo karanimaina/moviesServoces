@@ -1,5 +1,9 @@
 package com.example.demo;
 
-public class FilmCategory {
+import java.sql.Timestamp;
 
+public class FilmCategory {
+    private int film_id;
+    private int category_id;
+    private Timestamp last_update;
 }
