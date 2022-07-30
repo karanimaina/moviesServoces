@@ -6,5 +6,4 @@ public class Store {
     private int id;
     private int addressId;
     private Timestamp lastUpdate;
-
 }
