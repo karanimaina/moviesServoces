@@ -3,6 +3,7 @@ package com.example.demo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.sql.Timestamp;
 
 @Entity
 @Table
@@ -17,7 +18,7 @@ public class Film {
     private int length;
     private int replacement_cost;
     private int rating;
-    private int last_update;
+    private Timestamp last_update;
     private String special_features;
     private String full_text;
 }
