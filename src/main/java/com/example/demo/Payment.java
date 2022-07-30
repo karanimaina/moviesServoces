@@ -9,5 +9,4 @@ public class Payment {
     private int staffId;
     private int amount;
     private Timestamp paymentDate;
-
 }
