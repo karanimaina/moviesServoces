@@ -1,5 +1,23 @@
 package com.example.demo;
 
-public class Film {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table
+public class Film {
+    @Id
+    private int id;
+    private int Language_id;
+    private String title;
+    private String description;
+    private int release_year;
+    private int rental_duration;
+    private int length;
+    private int replacement_cost;
+    private int rating;
+    private int last_update;
+    private String special_features;
+    private String full_text;
 }
