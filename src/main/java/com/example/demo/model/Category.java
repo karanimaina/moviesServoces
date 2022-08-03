@@ -1,21 +1,25 @@
 package com.example.demo.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Objects;
+
 @Entity
 @Table
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @NoArgsConstructor
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "category_generator")
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private Timestamp last_update;
+
+
 }

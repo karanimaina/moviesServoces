@@ -1,15 +1,13 @@
 package com.example.demo.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 @Data
 @NoArgsConstructor
 @Entity
+@RequiredArgsConstructor
 @Table
 public class Actor {
     @Id

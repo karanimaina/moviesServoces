@@ -1,20 +1,19 @@
 package com.example.demo.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 @Table
 @Entity
-@Data
+@Getter @Setter
+@RequiredArgsConstructor
 @NoArgsConstructor
 public class Customer {
 @Id
-@GeneratedValue(strategy = GenerationType.AUTO,generator = "customer_generator")
+@GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
 @ManyToOne(fetch = FetchType.LAZY)
-@JoinColumn(name = "address_id")
 private  Address address;
 private int addressColumn;
 private String firstName;

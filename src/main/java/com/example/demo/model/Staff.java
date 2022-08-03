@@ -2,24 +2,23 @@ package com.example.demo.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 @Table
-@Getter
-@Setter
+@Getter @Setter
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Staff {
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "staff-generator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "address_id")
     private Address address;
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "store_id")
     private Store store;
     private String firstName;
     private String lastName;
@@ -30,7 +29,6 @@ public class Staff {
     private Timestamp lastUpdate;
     private String pictureUrl;
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
-    @JoinColumn(name = "payment_id")
     private Payment payment;
 
 }

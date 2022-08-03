@@ -2,8 +2,8 @@ package com.example.demo.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 @Table
@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor
 @Entity
+@RequiredArgsConstructor
 public class FilmActor {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)

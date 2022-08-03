@@ -1,17 +1,18 @@
 package com.example.demo.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 @Entity
 @Table
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 @NoArgsConstructor
 public class Film {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator = "film_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int Language_id;
     private String title;
@@ -25,6 +26,5 @@ public class Film {
     private String special_features;
     private String full_text;
     @ManyToOne
-    @JoinColumn(name = "language_id")
     private Language language;
 }

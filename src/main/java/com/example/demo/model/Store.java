@@ -1,7 +1,6 @@
 package com.example.demo.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -10,14 +9,15 @@ import java.sql.Timestamp;
 //@Getter
 //@Setter
 //Data annotation contains ToString, Getter, Setter, EqualsAndHashCode and RequiredArgsConstructor.
-@Data
+@Getter
+@Setter
+@RequiredArgsConstructor
 @NoArgsConstructor
 public class Store {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO,generator ="store_generator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
     private  Address address;
     private Timestamp lastUpdate;
 }
