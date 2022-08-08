@@ -1,16 +1,14 @@
 package com.example.demo.model;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-
+import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.sql.Timestamp;
 @Table
 @Getter @Setter
 @RequiredArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Staff {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +24,7 @@ public class Staff {
     private String active;
     private String userName;
     private String password;
+    @CreationTimestamp
     private Timestamp lastUpdate;
     private String pictureUrl;
     @ManyToOne(fetch = FetchType.LAZY,optional = false)

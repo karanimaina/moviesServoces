@@ -1,14 +1,18 @@
 package com.example.demo.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+
 @Table
 @Entity
 @Getter @Setter
 @RequiredArgsConstructor
-@NoArgsConstructor
 public class Customer {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +23,7 @@ private int addressColumn;
 private String firstName;
 private String lastName;
 private String email;
-private Timestamp createDate;
+private LocalDate createDate;
+@CreationTimestamp
 private Timestamp lastUpdate;
 }

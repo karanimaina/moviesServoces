@@ -1,15 +1,16 @@
 package com.example.demo.model;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
+
 @Table
 @Getter
 @Setter
-@NoArgsConstructor
 @Entity
 @RequiredArgsConstructor
 public class FilmActor {
@@ -19,5 +20,6 @@ public class FilmActor {
    private int film_id;
    @ManyToOne(fetch = FetchType.LAZY,optional = false)
    private Actor actor;
-    private Timestamp last_update;
+   @CreationTimestamp
+   private Timestamp lastUpdate;
 }

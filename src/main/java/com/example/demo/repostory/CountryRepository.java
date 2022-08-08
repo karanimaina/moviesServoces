@@ -4,5 +4,5 @@ import com.example.demo.model.Actor;
 import com.example.demo.model.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CountryRepository extends JpaRepository<Country, Integer>{
+//public interface CountryRepository extends JpaRepository<Country, Integer>{
 }

@@ -1,14 +1,18 @@
 package com.example.demo.model;
 
-import lombok.*;
-
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.sql.Timestamp;
+
 @Entity
 @Table
 @RequiredArgsConstructor
-@Setter @Getter
-@NoArgsConstructor
+@Setter
+@Getter
+
 public class Address {
     @Id
     @GeneratedValue
@@ -20,5 +24,6 @@ public class Address {
     private int district;
     private int postalCode;
     private int phone;
+    @CreationTimestamp
     private Timestamp lastUpdate;
 }

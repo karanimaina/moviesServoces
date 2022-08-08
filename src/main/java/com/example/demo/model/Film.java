@@ -1,20 +1,25 @@
 package com.example.demo.model;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+
 @Entity
 @Table
 @Getter
 @Setter
 @RequiredArgsConstructor
-@NoArgsConstructor
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int Language_id;
+    @ManyToOne
+    private Language language;
     private String title;
     private String description;
     private int release_year;
@@ -22,9 +27,9 @@ public class Film {
     private int length;
     private int replacement_cost;
     private int rating;
-    private Timestamp last_update;
+    @CreationTimestamp
+    private Timestamp lastUpdate;
     private String special_features;
     private String full_text;
-    @ManyToOne
-    private Language language;
+
 }

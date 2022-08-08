@@ -1,13 +1,17 @@
 package com.example.demo.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-@Data
+
+@Getter @Setter @Entity
 @NoArgsConstructor
-@Entity
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Table
 public class Actor {
     @Id
@@ -15,5 +19,6 @@ public class Actor {
     private  Integer id;
     private String firstName;
     private  String lastName;
+    @CreationTimestamp
     private Timestamp lastUpdate;
 }
